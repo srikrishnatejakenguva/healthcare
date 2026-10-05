@@ -1,0 +1,619 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f9fb;
+    color: #4d72a0;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    min-height: 70px;
+    background: rgb(125, 163, 212);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 0 7%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #2adfdf;
+}
+
+nav {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #0a8f8f;
+}
+
+nav button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: #0a8f8f;
+}
+
+.register-btn {
+    background: #0a8f8f !important;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+.Login-btn {
+    background: #0a8f8f !important;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 520px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+    padding: 70px 10%;
+    background: linear-gradient(135deg, #e9fbfb, #f5f9fc);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #123b4a;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #667;
+    margin-bottom: 30px;
+}
+
+.primary-btn {
+    border: none;
+    background: #0a8f8f;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.primary-btn:hover {
+    background: #067373;
+}
+
+
+/* ================= HERO CARD ================= */
+
+.hero-card {
+    width: 100%;
+    min-height: 280px;
+    background: rgb(149, 203, 245);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 12px;
+
+    text-align: center;
+}
+
+.medical-icon {
+    font-size: 70px;
+}
+
+.hero-card h2 {
+    color: #123b4a;
+}
+
+
+/* ================= SERVICES ================= */
+
+.services {
+    padding: 70px 10%;
+    text-align: center;
+}
+
+.services h2,
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #123b4a;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    display: grid;
+    place-items: center;
+    gap: 10px;
+}
+
+.service-card span {
+    font-size: 40px;
+}
+
+.service-card h3 {
+    margin-top: 5px;
+}
+
+.service-card p {
+    color: #777;
+    line-height: 1.5;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    text-align: center;
+    padding: 60px 15%;
+    background: #e9f7f7;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/* ================= LOGIN / REGISTER MODAL ================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    place-items: center;
+}
+
+.auth-box {
+    width: min(400px, 90%);
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    position: relative;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.auth-box h2 {
+    text-align: center;
+    color: #123b4a;
+    margin-bottom: 8px;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #777;
+}
+
+.auth-box form {
+    display: grid;
+    gap: 8px;
+}
+
+.auth-box label {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.auth-box input:focus {
+    border-color: #0a8f8f;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    background: #0a8f8f;
+    color: white;
+    border-radius: 6px;
+    margin-top: 18px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.auth-btn:hover {
+    background: #067373;
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+.switch-text span {
+    color: #0a8f8f;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* ================= DASHBOARD ================= */
+
+.dashboard {
+    display: none;
+    min-height: 650px;
+    padding: 70px 8%;
+    text-align: center;
+    background: #f5f9fc;
+}
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.dashboard-content h1 {
+    font-size: 35px;
+    color: #123b4a;
+}
+
+.dashboard-content > p {
+    margin: 15px 0 40px;
+    color: #666;
+}
+
+
+/* Dashboard Cards - GRID */
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    display: grid;
+    place-items: center;
+    gap: 10px;
+}
+
+.dashboard-card span {
+    font-size: 40px;
+}
+
+.dashboard-card h3 {
+    color: #123b4a;
+}
+
+.dashboard-card p {
+    color: #777;
+    line-height: 1.5;
+}
+
+.dashboard-card button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #0a8f8f;
+    color: white;
+    cursor: pointer;
+}
+
+.dashboard-card button:hover {
+    background: #067373;
+}
+
+
+/* ================= DASHBOARD CONTENT ================= */
+
+#dashboardSection {
+    margin-top: 45px;
+    text-align: left;
+}
+
+.section-title {
+    text-align: center;
+    color: #123b4a;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+
+/* ================= DOCTORS GRID ================= */
+
+.doctors-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.doctor-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    display: grid;
+    gap: 8px;
+}
+
+.doctor-icon {
+    font-size: 45px;
+}
+
+.doctor-card h3 {
+    color: #123b4a;
+}
+
+.doctor-card .specialization {
+    color: #0a8f8f;
+    font-weight: bold;
+}
+
+.doctor-card p {
+    color: #666;
+}
+
+.doctor-card button {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #0a8f8f;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* ================= BOOKING FORM ================= */
+
+.booking-box {
+    background: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.booking-box form {
+    display: grid;
+    gap: 8px;
+}
+
+.booking-box label {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.booking-box select,
+.booking-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.booking-box button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background: #0a8f8f;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* ================= APPOINTMENTS GRID ================= */
+
+.appointments-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.appointment-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    border-left: 5px solid #0a8f8f;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    display: grid;
+    gap: 8px;
+}
+
+.appointment-card h3 {
+    color: #123b4a;
+}
+
+.appointment-card p {
+    color: #555;
+}
+
+.cancel-btn {
+    margin-top: 10px;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #d9534f;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* ================= NO APPOINTMENTS ================= */
+
+.no-appointments {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.no-appointments p {
+    margin-top: 10px;
+    color: #777;
+}
+
+
+/* ================= LOGOUT ================= */
+
+.logout-btn {
+    margin-top: 40px;
+    padding: 12px 30px;
+    background: #d9534f;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #c9302c;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #123b4a;
+    color: white;
+}
+
+
+/* ================= RESPONSIVE GRID ================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .service-container,
+    .dashboard-cards,
+    .doctors-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .appointments-container {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px 5%;
+        text-align: center;
+    }
+
+    nav {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(2, auto);
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .service-container,
+    .dashboard-cards,
+    .doctors-container,
+    .appointments-container {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard {
+        padding: 50px 5%;
+    }
+
+    .services {
+        padding: 50px 5%;
+    }
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header id="mainHeader">
+        <div class="logo">HealthCare+</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <button class="Login-btn" onclick="showLogin()">Login</button>
+            <button class="register-btn" onclick="showRegister()">Register</button>
+        </nav>
+    </header>
+
+
+    <!-- Home -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <h1>Your Health, Our Priority</h1>
+
+            <p>
+                Book appointments with trusted doctors quickly,
+                easily and securely.
+            </p>
+
+            <button class="primary-btn" onclick="showRegister()">
+                Book Appointment
+            </button>
+        </div>
+
+        <div class="hero-card">
+            <div class="medical-icon">⚕️</div>
+            <h2>Healthcare Appointment System</h2>
+            <p>Easy • Fast • Reliable</p>
+        </div>
+
+    </section>
+
+
+    <!-- Services -->
+    <section class="services" id="services">
+
+        <h2>Our Services</h2>
+
+        <div class="service-container">
+
+            <div class="service-card">
+                <span>👨‍⚕️</span>
+                <h3>Find Doctors</h3>
+                <p>Search and connect with qualified doctors.</p>
+            </div>
+
+            <div class="service-card">
+                <span>📅</span>
+                <h3>Book Appointment</h3>
+                <p>Schedule your appointment at your convenience.</p>
+            </div>
+
+            <div class="service-card">
+                <span>🏥</span>
+                <h3>Healthcare Services</h3>
+                <p>Access different healthcare services easily.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <h2>About Our System</h2>
+
+        <p>
+            Healthcare Appointment System helps patients manage
+            doctor appointments through a simple and user-friendly
+            online platform.
+        </p>
+
+    </section>
+
+
+    <!-- Login/Register Modal -->
+    <div class="modal" id="authModal">
+
+        <div class="auth-box">
+
+            <button class="close-btn" onclick="closeModal()">×</button>
+
+
+            <!-- Login -->
+            <div id="loginForm">
+
+                <h2>Welcome Back</h2>
+
+                <p class="form-subtitle">
+                    Login to your account
+                </p>
+
+                <form onsubmit="loginUser(event)">
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button type="submit" class="auth-btn">
+                        Login
+                    </button>
+
+                </form>
+
+                <p class="switch-text">
+                    Don't have an account?
+                    <span onclick="showRegister()">Register</span>
+                </p>
+
+            </div>
+
+
+            <!-- Register -->
+            <div id="registerForm">
+
+                <h2>Create Account</h2>
+
+                <p class="form-subtitle">
+                    Register as a patient
+                </p>
+
+                <form onsubmit="registerUser(event)">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                    <label>Confirm Password</label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
+                    <button type="submit" class="auth-btn">
+                        Register
+                    </button>
+
+                </form>
+
+                <p class="switch-text">
+                    Already have an account?
+                    <span onclick="showLogin()">Login</span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section class="dashboard" id="dashboard">
+
+        <div class="dashboard-content">
+
+            <h1>
+                Welcome, <span id="userName"></span> 👋
+            </h1>
+
+            <p>
+                Manage your healthcare appointments easily.
+            </p>
+
+
+            <!-- Dashboard Cards -->
+
+            <div class="dashboard-cards">
+
+                <!-- Book Appointment -->
+                <div class="dashboard-card">
+
+                    <span>📅</span>
+
+                    <h3>Book Appointment</h3>
+
+                    <p>
+                        Schedule an appointment with a doctor.
+                    </p>
+
+                    <button onclick="showBooking()">
+                        Book Now
+                    </button>
+
+                </div>
+
+
+                <!-- Doctors -->
+                <div class="dashboard-card">
+
+                    <span>👨‍⚕️</span>
+
+                    <h3>Doctors List</h3>
+
+                    <p>
+                        View available healthcare professionals.
+                    </p>
+
+                    <button onclick="showDoctors()">
+                        View Doctors
+                    </button>
+
+                </div>
+
+
+                <!-- Appointments -->
+                <div class="dashboard-card">
+
+                    <span>📋</span>
+
+                    <h3>My Appointments</h3>
+
+                    <p>
+                        View and manage your appointments.
+                    </p>
+
+                    <button onclick="showAppointments()">
+                        View Appointments
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dynamic Dashboard Content -->
+
+            <div id="dashboardSection"></div>
+
+
+            <button class="logout-btn" onclick="logoutUser()">
+                Logout
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        <p>© 2026 Healthcare Appointment System</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
